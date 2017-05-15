@@ -1,6 +1,6 @@
 import unittest
 
-from pseudohex import Pseudohex
+from pseudohex.pseudohex import Pseudohex
 
 
 class test_pseudohex(unittest.TestCase):
