@@ -1,4 +1,13 @@
 class Pseudohex():
+    '''
+    Implements Traveller pseudohex
+    - Assign value: p = Pseudohex(6)
+    - Declare without value => value = 0
+      p = Pseudohex() => int(p) == 0, str(p) == '0'
+    - int(p) returns int representation
+    - str(p) returns str representation
+    - You can compare with either str or int
+    '''
     def __init__(self, value=0):
         self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
         if isinstance(value, str):
