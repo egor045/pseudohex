@@ -24,18 +24,50 @@ class Pseudohex():
     def __str__(self):
         return self.valid[self._value]
 
-    def __cmp__(self, other):
+    def __eq__(self, other):
         if isinstance(other, str):
-            if self.valid[self._value] < other:
-                return -1
-            elif self.valid[self._value] == other:
-                return 0
-            elif self.valid[self._value] > other:
-                return 1
+            return self.valid[self._value] == other
         elif isinstance(other, int):
-            if self._value < other:
-                return -1
-            elif self._value == other:
-                return 0
-            elif self._value > other:
-                return 1
+            return self._value == other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
+
+    def __ne__(self, other):
+        if isinstance(other, str):
+            return self.valid[self._value] != other
+        elif isinstance(other, int):
+            return self._value != other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
+
+    def __lt__(self, other):
+        if isinstance(other, str):
+            return self.valid[self._value] < other
+        elif isinstance(other, int):
+            return self._value < other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
+
+    def __gt__(self, other):
+        if isinstance(other, str):
+            return self.valid[self._value] > other
+        elif isinstance(other, int):
+            return self._value > other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
+
+    def __le__(self, other):
+        if isinstance(other, str):
+            return self.valid[self._value] <= other
+        elif isinstance(other, int):
+            return self._value <= other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
+
+    def __ge__(self, other):
+        if isinstance(other, str):
+            return self.valid[self._value] >= other
+        elif isinstance(other, int):
+            return self._value >= other
+        else:
+            raise TypeError('%s %s should be int or str', type(other), other)
