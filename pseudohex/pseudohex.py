@@ -10,6 +10,9 @@ class Pseudohex():
     '''
     def __init__(self, value=0):
         self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
+        self._set(value)
+
+    def _set(self, value):
         if isinstance(value, str):
             if self.valid.find(value) != -1:
                 self._value = self.valid.find(value)
