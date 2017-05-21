@@ -1,18 +1,23 @@
-class Pseudohex():
-    '''
-    Implements Traveller pseudohex
-    - Assign value: p = Pseudohex(6)
-    - Declare without value => value = 0
-      p = Pseudohex() => int(p) == 0, str(p) == '0'
-    - int(p) returns int representation
-    - str(p) returns str representation
-    - You can compare with either str or int
-    '''
+'''
+Implements Traveller pseudohex
+- Assign value: p = Pseudohex(6)
+- Declare without value => value = 0
+    p = Pseudohex() => int(p) == 0, str(p) == '0'
+- int(p) returns int representation
+- str(p) returns str representation
+- You can compare with either str or int
+'''
+
+
+class Pseudohex(object):
+    '''Pseudohex'''
     def __init__(self, value=0):
-        self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
+        if 'valid' not in locals():     # Allow self.valid to be set in subclasses
+            self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
         self._set(value)
 
     def _set(self, value):
+        '''Validate and set value'''
         if isinstance(value, str):
             if self.valid.find(value) != -1:
                 self._value = self.valid.find(value)
