@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='pseudohex',
-      version='0.2.2',
+      version='0.2.4',
       description='Pseudohex module (from Traveller/Cepheus System',
       url='http://github.com/storborg/funniest',
       author='Arthur Green',

@@ -12,8 +12,7 @@ Implements Traveller pseudohex
 class Pseudohex(object):
     '''Pseudohex'''
     def __init__(self, value=0):
-        if 'valid' not in locals():     # Allow self.valid to be set in subclasses
-            self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
+        self.valid = '0123456789ABCDEFGHJKLMNPQRSTUVWXYZ'
         self._set(value)
 
     def _set(self, value):
